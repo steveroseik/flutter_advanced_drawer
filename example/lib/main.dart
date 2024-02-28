@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:flutter_advanced_drawer_example/navigator.dart';
 
 void main() {
   runApp(MyApp());
@@ -54,27 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         // ],
         borderRadius: const BorderRadius.all(Radius.circular(16)),
       ),
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Advanced Drawer Example'),
-          leading: IconButton(
-            onPressed: _handleMenuButtonPressed,
-            icon: ValueListenableBuilder<AdvancedDrawerValue>(
-              valueListenable: _advancedDrawerController,
-              builder: (_, value, __) {
-                return AnimatedSwitcher(
-                  duration: Duration(milliseconds: 250),
-                  child: Icon(
-                    value.visible ? Icons.clear : Icons.menu,
-                    key: ValueKey<bool>(value.visible),
-                  ),
-                );
-              },
-            ),
-          ),
-        ),
-        body: Container(),
-      ),
+      child: MainNavigator(),
       drawer: SafeArea(
         child: Container(
           child: ListTileTheme(

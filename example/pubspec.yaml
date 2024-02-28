@@ -1,9 +1,10 @@
 name: flutter_advanced_drawer_example
 description: Demonstrates how to use the flutter_advanced_drawer plugin.
+version: 1.3.6+1
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: 3.7.3
 
 dependencies:
